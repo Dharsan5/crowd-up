@@ -142,9 +142,9 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const user = {
-    "name": "Jane Spoonfighter",
-    "email": "janspoon@fighter.dev",
-    "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=255&q=80"
+    "name": "Dharshan",
+    "email": "Dharshan@me.io",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=255&q=80"
 }
 
 const ICON_SIZE = 18

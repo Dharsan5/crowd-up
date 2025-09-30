@@ -76,8 +76,8 @@ const HowItWorksPage = (): JSX.Element => {
                             <iframe
                                 width="600"
                                 height="400"
-                                src="https://www.youtube.com/embed/ut8___4PI2A"
-                                title="Baby Shark Dance + More Songs | Compilation for Kids | Pinkfong Baby Shark"
+                                src="https://www.youtube.com/embed/mwKJfNYwvm8"
+                                title="How Crowdfunding Works"
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowFullScreen/>

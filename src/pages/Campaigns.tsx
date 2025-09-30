@@ -65,12 +65,14 @@ const CampaignsPage = (): JSX.Element => {
                             </Flex>
                         </Flex>
                         <SimpleGrid
-                            cols={3}
-                            spacing="lg"
+                            cols={4}
+                            spacing="xl"
                             breakpoints={[
+                                {maxWidth: 'xl', cols: 3, spacing: 'lg'},
                                 {maxWidth: 'md', cols: 2, spacing: 'md'},
-                                {maxWidth: 'sm', cols: 1, spacing: 0},
+                                {maxWidth: 'sm', cols: 1, spacing: 'sm'},
                             ]}
+                            mt="xl"
                         >
                             {items}
                         </SimpleGrid>

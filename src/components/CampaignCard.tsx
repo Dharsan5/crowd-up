@@ -17,20 +17,21 @@ import {Link} from "react-router-dom";
 const useStyles = createStyles((theme) => ({
     card: {
         position: 'relative',
-        padding: theme.spacing.lg,
-        backdropFilter: `blur(16px) saturate(180%)`,
-        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : `rgba(255, 255, 255, 0.75)`,
-        border: `2px solid rgba(209, 213, 219, 0.3)`,
+        padding: 0,
+        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
+        border: `1px solid ${theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[2]}`,
+        overflow: 'hidden',
+        cursor: 'pointer',
 
         [`&:hover .${getStylesRef('image')}`]: {
-            transform: 'scale(1.03)',
+            transform: 'scale(1.05)',
         },
 
         '&:hover': {
             boxShadow: theme.shadows.xl,
-            border: `2px solid ${theme.colors.primary[7]}`,
-            backgroundColor: theme.colors.primary[0],
-            transition: 'all 150ms ease',
+            transform: 'translateY(-4px)',
+            border: `1px solid ${theme.colors.primary[4]}`,
+            transition: 'all 200ms ease',
         }
     },
 
@@ -65,14 +66,21 @@ const CampaignCard = ({data, showActions}: IProps) => {
     const linkProps = {to: `/campaigns/${id}`, rel: 'noopener noreferrer'};
 
     return (
-        <Card radius="sm" shadow="md" ml="xs" component={Link} {...linkProps} className={classes.card}>
+        <Card radius="md" shadow="lg" component={Link} {...linkProps} className={classes.card}>
             <Card.Section>
-                <Image src={mainImage} height={280} className={classes.image}/>
+                <Image 
+                    src={mainImage} 
+                    height={220} 
+                    fit="cover"
+                    withPlaceholder
+                    placeholder={<Text align="center">Campaign Image</Text>}
+                    className={classes.image}
+                />
             </Card.Section>
 
-            <Card.Section pt={0} px="md" pb="md">
-                <Stack>
-                    <Text className={classes.title} lineClamp={1} fw={500} size="lg">
+            <Card.Section p="lg">
+                <Stack spacing="sm">
+                    <Text className={classes.title} lineClamp={2} fw={600} size="md">
                         {title}
                     </Text>
 

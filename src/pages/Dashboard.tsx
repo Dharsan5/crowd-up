@@ -75,7 +75,7 @@ const DashboardPage = () => {
             <Box>
                 <Container fluid my="xl">
                     <Stack spacing="xl">
-                        <Title order={3}>Good evening, Jane</Title>
+                        <Title order={3}>Good evening, Dharshan</Title>
                         <SimpleGrid
                             cols={4}
                             breakpoints={[{maxWidth: 'md', cols: 2, spacing: 'md'}, {
