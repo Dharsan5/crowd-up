@@ -13,6 +13,9 @@ export interface ICampaign {
     category: string
     country: string
     type: string | null
+    moderationStatus?: 'PENDING' | 'APPROVED' | 'HOLD' | 'REJECTED'
+    moderationRisk?: number
+    moderationReasons?: string[]
 }
 
 export interface ITestimonial {
@@ -22,6 +25,66 @@ export interface ITestimonial {
     createdByImage: string
     company: string
     jobPosition: string
+}
+
+// Moderation types
+export interface IModerationResult {
+    decision: 'APPROVE' | 'HOLD' | 'REJECT'
+    risk: number
+    scores: {
+        SCAM_FINANCIAL: number
+        IMPERSONATION: number
+        MEDICAL_CLAIMS: number
+        PAYMENT_BYPASS: number
+        VIOLENT_ADULT_HATE: number
+        SENSITIVE_DOCS: number
+        LOW_QUALITY_SPAM: number
+    }
+    rationale: string[]
+    requiredEdits: string[]
+    highlightedSpans: Array<{
+        field: string
+        text: string
+        start?: number
+        end?: number
+    }>
+    ruleReasons: string[]
+    imageFindings: Array<{
+        imageId: string
+        score: number
+        labels: string[]
+    }>
+}
+
+export interface ICampaignImage {
+    id: string
+    mime: string
+    url?: string
+    ocrText?: string
+    moderationScore?: number
+    moderationLabels?: string[]
+}
+
+export interface ICampaignCreator {
+    displayName: string
+    accountAgeDays: number
+    pastCampaigns: number
+    verifiedEmail: boolean
+    verifiedIdentity: boolean
+    userId: string
+    profileImage?: string
+}
+
+export interface IModerationQueue {
+    id: string
+    campaignId: string
+    campaign: ICampaign
+    moderationResult: IModerationResult
+    status: 'PENDING' | 'REVIEWED'
+    reviewedBy?: string
+    reviewedAt?: string
+    reviewNotes?: string
+    createdAt: string
 }
 
 export interface ICountry {
